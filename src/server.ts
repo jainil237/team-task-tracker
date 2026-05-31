@@ -2,6 +2,7 @@ import 'dotenv/config';
 import { AppDataSource } from './config/database';
 import app from './app';
 import { env } from './config/env';
+import "reflect-metadata";
 
 async function bootstrap() {
   try {

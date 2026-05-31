@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import authRoutes from './routes/auth.route';
+import "reflect-metadata";
+import projectRoutes from "./routes/project.route";
 
 const app = express();
 
@@ -10,6 +12,7 @@ app.use(cors());
 app.use(helmet());
 
 app.use('/auth', authRoutes);
+app.use("/projects", projectRoutes);
 
 app.use((err: any, _req: any, res: any, _next: any) => {
   const message = err?.message ?? 'Internal Server Error';
